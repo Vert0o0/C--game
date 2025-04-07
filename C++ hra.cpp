@@ -10,7 +10,6 @@ int main(){
     cout << "Zadejze cisolo postavy, kterou chcete zvolit:" << endl;
     cin >> postava;
 
-        
     switch (postava) {
     case 1:
         cout << "Vase class: warlock" << endl;
