@@ -10,7 +10,10 @@ int main(){
     cout << "Jakou slozku vezmete do ruky?" << endl;
     cin >> postava;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbb19ff47678e9cdd6c01958c04ccbbb6846b415
     switch (postava) {
     case 1:
         cout << "Vase diagnoza: schizofrenie" << endl;
@@ -23,11 +26,15 @@ int main(){
         cout << "Zkusenosti: 0" << endl;
         cout << "Agresivita: 45" << endl;
         cout << "Presvedcivost: 65" << endl;
+<<<<<<< HEAD
         cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
         cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
         cin >> souhlas;
 
+=======
+>>>>>>> cbb19ff47678e9cdd6c01958c04ccbbb6846b415
         break;
+        
     case 2:
         cout << "Vase diagnoza: Bipolarni afektivni porucha (BAP)" << endl;
         cout << endl;
@@ -39,10 +46,14 @@ int main(){
         cout << "Zkusenosti: 0" << endl;
         cout << "Agresivita: 55" << endl;
         cout << "Presvedcivost: 55" << endl;
+<<<<<<< HEAD
         cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
         cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
         cin >> souhlas;
+=======
+>>>>>>> cbb19ff47678e9cdd6c01958c04ccbbb6846b415
         break;
+        
     case 3:
         cout << "Vase diagnoza: Tezka depresivni porucha" << endl;
         cout << endl;
@@ -54,12 +65,20 @@ int main(){
         cout << "Zkusenosti: 0" << endl;
         cout << "Agresivita: 35" << endl;
         cout << "Presvedcivost: 80" << endl;
+<<<<<<< HEAD
         cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
         cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
         cin >> souhlas;
+=======
+>>>>>>> cbb19ff47678e9cdd6c01958c04ccbbb6846b415
         break;
+        
     case 4:
+<<<<<<< HEAD
         cout << "Vase diagnoza: Disociativní porucha identity (DID)" << endl;
+=======
+        cout << "Vase diagnoza: DisociativnÃ­ porucha identity (DID)" << endl;
+>>>>>>> cbb19ff47678e9cdd6c01958c04ccbbb6846b415
         cout << endl;
         cout << "Jmeno: Tyler Durden" << endl;
         cout << "Body vedomi: 50/50" << endl;
@@ -69,6 +88,7 @@ int main(){
         cout << "Zkusenosti: 0" << endl;
         cout << "Agresivita: 60" << endl;
         cout << "Presvedcivost: 70" << endl;
+<<<<<<< HEAD
         cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
         cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
         cin >> souhlas;
@@ -78,7 +98,14 @@ int main(){
         break;
     }
 
+=======
+        break;
+    }
 
+    cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
+    cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
+    cin >> souhlas;
+>>>>>>> cbb19ff47678e9cdd6c01958c04ccbbb6846b415
     }while (souhlas != 1);
 
 }
