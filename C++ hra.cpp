@@ -78,6 +78,7 @@ int main(){
         break;
     }
 
+
     }while (souhlas != 1);
 
 }
