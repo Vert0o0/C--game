@@ -9,7 +9,7 @@ int main(){
     do {
     cout << "Jakou slozku vezmete do ruky?" << endl;
     cin >> postava;
-
+//komentar pro test
     switch (postava) {
     case 1:
         cout << "Vase diagnoza: schizofrenie" << endl;
