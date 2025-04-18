@@ -3,53 +3,81 @@ using namespace std;
 
 int main(){
     int postava, souhlas = 2;
-    cout << "Vitejte na zacatku hry! Na zacatek si vyberte postavu: " << endl;
-    cout << endl;
-    cout << "Warlock - 1, Elf - 2, Alchemista - 3, Valecnik - 4" << endl;
+    cout << "Vy otevirate oci. Pred vasima ocima vidite bily strop a spinave steny" << endl;
+    cout << "Vy se zvedate, a pomalu zkoumate ocima okoli. Jasnejsi? Sotva" << endl;
+    cout << "Tichymi kroky se priblizujete ke stolu. Na stole lezi 4 slozky s dokumenty. Na prvni pohled vypadaji stejne" << endl;
     do {
-    cout << "Zadejze cisolo postavy, kterou chcete zvolit:" << endl;
+    cout << "Jakou slozku vezmete do ruky?" << endl;
     cin >> postava;
 
-        
+
     switch (postava) {
     case 1:
-        cout << "Vase class: warlock" << endl;
+        cout << "Vase diagnoza: schizofrenie" << endl;
         cout << endl;
-        cout << "Statistiky vase postavy jsou: " << endl;
-        cout << "Zivot - 2/2" << endl;
-        cout << "Utok - 4" << endl;
-        cout << "Mana - 7/7" << endl;
+        cout << "Jmeno: Daniel Paul Schreber" << endl;
+        cout << "Body vedomi: 75/75" << endl;
+        cout << "Sila vule: 55/55" << endl;
+        cout << "Trpelivost: 40" << endl;
+        cout << "Potencial: 60" << endl;
+        cout << "Zkusenosti: 0" << endl;
+        cout << "Agresivita: 45" << endl;
+        cout << "Presvedcivost: 65" << endl;
+        cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
+        cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
+        cin >> souhlas;
 
         break;
     case 2:
-        cout << "Vase class: elf" << endl;
+        cout << "Vase diagnoza: Bipolarni afektivni porucha (BAP)" << endl;
         cout << endl;
-        cout << "Statistiky vase postavy jsou: " << endl;
-        cout << "Zivot - 3/3" << endl;
-        cout << "Utok - 5" << endl;
-        cout << "Mana - 5/5" << endl;
+        cout << "Jmeno: Virginia Woolf" << endl;
+        cout << "Body vedomi: 70/70" << endl;
+        cout << "Sila vule: 60/60" << endl;
+        cout << "Trpelivost: 40" << endl;
+        cout << "Potencial: 60" << endl;
+        cout << "Zkusenosti: 0" << endl;
+        cout << "Agresivita: 55" << endl;
+        cout << "Presvedcivost: 55" << endl;
+        cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
+        cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
+        cin >> souhlas;
         break;
     case 3:
-        cout << "Vase class: alchemista" << endl;
+        cout << "Vase diagnoza: Tezka depresivni porucha" << endl;
         cout << endl;
-        cout << "Statistiky vase postavy jsou: " << endl;
-        cout << "Zivot - 3/3" << endl;
-        cout << "Utok - 4" << endl;
-        cout << "Mana - 6/6" << endl;
+        cout << "Jmeno: Esther Greenwood" << endl;
+        cout << "Body vedomi: 65/65" << endl;
+        cout << "Sila vule: 4040" << endl;
+        cout << "Trpelivost: 60" << endl;
+        cout << "Potencial: 60" << endl;
+        cout << "Zkusenosti: 0" << endl;
+        cout << "Agresivita: 35" << endl;
+        cout << "Presvedcivost: 80" << endl;
+        cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
+        cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
+        cin >> souhlas;
         break;
     case 4:
-        cout << "Vase class: valecnik" << endl;
+        cout << "Vase diagnoza: Disociativní porucha identity (DID)" << endl;
         cout << endl;
-        cout << "Statistiky vase postavy jsou: " << endl;
-        cout << "Zivot - 5/5" << endl;
-        cout << "Utok - 6" << endl;
-        cout << "Mana - 2/2" << endl;
+        cout << "Jmeno: Tyler Durden" << endl;
+        cout << "Body vedomi: 50/50" << endl;
+        cout << "Sila vule: 70/70" << endl;
+        cout << "Trpelivost: 30" << endl;
+        cout << "Potencial: 60" << endl;
+        cout << "Zkusenosti: 0" << endl;
+        cout << "Agresivita: 60" << endl;
+        cout << "Presvedcivost: 70" << endl;
+        cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
+        cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
+        cin >> souhlas;
+        break;
+    default:
+        cout << "Takova slozka k dispozici neni, vyberte si jinou" << endl;
         break;
     }
 
-
-    cout << "Jste spokojeny se svoji volbou? ano - 1, ne - 0" << endl;
-    cin >> souhlas;
     }while (souhlas != 1);
 
 }
