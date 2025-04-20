@@ -1,84 +1,71 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
+class Character {
+public:
+    string diagnoza;
+    string jmeno;
+    int max_vedomi;
+    int vedomi;
+    int max_vule;
+    int vule;
+    int trpelivost;
+    int potencial;
+    int zkusenosti;
+    int agresivita;
+    int presvedcivost;
+
+    Character(string d, string j, int mbv, int sv, int t, int p, int z, int a, int pr)
+        : diagnoza(d), jmeno(j), max_vedomi(mbv), vedomi(mbv), max_vule(sv), vule(sv),
+          trpelivost(t), potencial(p), zkusenosti(z), agresivita(a), presvedcivost(pr) {}
+
+    void vypis() {
+        cout << "Vase diagnoza: " << diagnoza << endl << endl;
+        cout << "Jmeno: " << jmeno << endl;
+        cout << "Body vedomi: " << vedomi << "/" << max_vedomi << endl;
+        cout << "Sila vule: " << vule << "/" << max_vule << endl;
+        cout << "Trpelivost: " << trpelivost << endl;
+        cout << "Potencial: " << potencial << endl;
+        cout << "Zkusenosti: " << zkusenosti << endl;
+        cout << "Agresivita: " << agresivita << endl;
+        cout << "Presvedcivost: " << presvedcivost << endl;
+        cout << "Pomalu vam zacina dochazet, kde se nachazite\n";
+}
+
+
+    void rana(int zraneni) {
+        vedomi -= zraneni;
+        cout << jmeno << " dostal ranu. Zbyle body vedomi: " << vedomi << endl;
+}
+};
+
 int main(){
+    vector<Character> characters {
+            Character("\nschizofrenie", "Daniel Paul Schreber", 75, 55, 40, 60, 0, 45, 65),
+            Character("\nBipolarni afektivni porucha (BAP)", "Virginia Woolf", 70, 60, 40, 60, 0, 55, 55),
+            Character("\nTezka depresivni porucha", "Esther Greenwood", 65, 40, 60, 60, 0, 35, 80),
+            Character("\nDisociativni porucha identity (DID)", "Tyler Durden", 50, 70, 30, 60, 0, 60, 70)
+    };
+
     int postava, souhlas = 2;
-    cout << "Vy otevirate oci. Pred vasima ocima vidite bily strop a spinave steny" << endl;
-    cout << "Vy se zvedate, a pomalu zkoumate ocima okoli. Jasnejsi? Sotva" << endl;
-    cout << "Tichymi kroky se priblizujete ke stolu. Na stole lezi 4 slozky s dokumenty. Na prvni pohled vypadaji stejne" << endl;
+        cout << "Vy otevirate oci. Pred vasima ocima vidite bily strop a spinave steny\n";
+        cout << "Vy se zvedate, a pomalu zkoumate ocima okoli. Jasnejsi? Sotva\n";
+        cout << "Tichymi kroky se priblizujete ke stolu. Na stole lezi 4 slozky s dokumenty. Na prvni pohled vypadaji stejne\n";
     do {
-    cout << "Jakou slozku vezmete do ruky?" << endl;
-    cin >> postava;
-    switch (postava) {
-    case 1:
-        cout << "Vase diagnoza: schizofrenie" << endl;
+        cout << "Jakou slozku vezmete do ruky? (1-4): ";
+        cin >> postava;
         cout << endl;
-        cout << "Jmeno: Daniel Paul Schreber" << endl;
-        cout << "Body vedomi: 75/75" << endl;
-        cout << "Sila vule: 55/55" << endl;
-        cout << "Trpelivost: 40" << endl;
-        cout << "Potencial: 60" << endl;
-        cout << "Zkusenosti: 0" << endl;
-        cout << "Agresivita: 45" << endl;
-        cout << "Presvedcivost: 65" << endl;
-        cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
-        cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
-        cin >> souhlas;
 
-        break;
-
-    case 2:
-        cout << "Vase diagnoza: Bipolarni afektivni porucha (BAP)" << endl;
-        cout << endl;
-        cout << "Jmeno: Virginia Woolf" << endl;
-        cout << "Body vedomi: 70/70" << endl;
-        cout << "Sila vule: 60/60" << endl;
-        cout << "Trpelivost: 40" << endl;
-        cout << "Potencial: 60" << endl;
-        cout << "Zkusenosti: 0" << endl;
-        cout << "Agresivita: 55" << endl;
-        cout << "Presvedcivost: 55" << endl;
-        cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
-        cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
-        cin >> souhlas;
-        break;
-
-    case 3:
-        cout << "Vase diagnoza: Tezka depresivni porucha" << endl;
-        cout << endl;
-        cout << "Jmeno: Esther Greenwood" << endl;
-        cout << "Body vedomi: 65/65" << endl;
-        cout << "Sila vule: 4040" << endl;
-        cout << "Trpelivost: 60" << endl;
-        cout << "Potencial: 60" << endl;
-        cout << "Zkusenosti: 0" << endl;
-        cout << "Agresivita: 35" << endl;
-        cout << "Presvedcivost: 80" << endl;
-        cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
-        cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
-        cin >> souhlas;
-        break;
-
-    case 4:
-        cout << "Vase diagnoza: Disociativni� porucha identity (DID)" << endl;
-
-        cout << endl;
-        cout << "Jmeno: Tyler Durden" << endl;
-        cout << "Body vedomi: 50/50" << endl;
-        cout << "Sila vule: 70/70" << endl;
-        cout << "Trpelivost: 30" << endl;
-        cout << "Potencial: 60" << endl;
-        cout << "Zkusenosti: 0" << endl;
-        cout << "Agresivita: 60" << endl;
-        cout << "Presvedcivost: 70" << endl;
-        cout << "Pomalu vam zacina dochazet, kde se nachazite" << endl;
-        cout << "Privlastnit si tuto slozku? ano - 1, ne - 0" << endl;
-        cin >> souhlas;
-        break;
-    default:
-        cout << "Takova slozka k dispozici neni, vyberte si jinou" << endl;
-        break;
-    }
+    if (postava >= 1 && postava <= 4) {
+            characters[postava - 1].vypis(); // napověda od taty-programatora. v poli čislovani začina od 0, takže 1 = 2, timpadem 1 = 2-1
+            cout << "Privlastnit si tuto slozku? ano - 1, ne - 0\n";
+            cin >> souhlas;
+        } else {
+            cout << "Takova slozka k dispozici neni, vyberte si jinou\n";
+        }
     }while (souhlas != 1);
+
+    characters[postava-1].rana(20); // testovani toho, jak pracovat s funkcemi při použivani classu
 
 }
