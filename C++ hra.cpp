@@ -40,12 +40,33 @@ public:
 }
 };
 
+class Enemy {
+public:
+    string klass;
+    string jmeno;
+    int vedomi;
+    int sila;
+    int nakazlivost;
+    int neduverivost;
+
+
+    Enemy(string k, string j, int v, int s, int n, int ne)
+        : klass(k), jmeno(j), vedomi(v), sila(s), nakazlivost(n), neduverivost(ne) {}
+
+};
+
 int main(){
     vector<Character> characters {
             Character("\nschizofrenie", "Daniel Paul Schreber", 75, 55, 40, 60, 0, 45, 65),
             Character("\nBipolarni afektivni porucha (BAP)", "Virginia Woolf", 70, 60, 40, 60, 0, 55, 55),
             Character("\nTezka depresivni porucha", "Esther Greenwood", 65, 40, 60, 60, 0, 35, 80),
             Character("\nDisociativni porucha identity (DID)", "Tyler Durden", 50, 70, 30, 60, 0, 60, 70)
+    };
+
+    vector<Enemy> Enemies {
+            Enemy("\nPsychiatric_orderly", "Patric", 65, 30, 0, 60),
+            Enemy("\nPsychiatr", "Jean Delay", 50, 5, 0, 60),
+            Enemy("\nLoony", "Linuxofil", 35, 15, 25, 80),
     };
 
     int postava, souhlas = 2;
