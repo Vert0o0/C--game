@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <thread>
 using namespace std;
+using namespace std::this_thread;
+using namespace std::chrono;
 
 class Character {
 public:
@@ -71,10 +74,14 @@ int main(){
 
     int postava, souhlas = 2;
         cout << "Vy otevirate oci. Pred vasima ocima vidite bily strop a spinave steny\n";
+        sleep_for(seconds(2));
         cout << "Vy se zvedate, a pomalu zkoumate ocima okoli. Jasnejsi? Sotva\n";
+        sleep_for(seconds(2));
         cout << "Tichymi kroky se priblizujete ke stolu. Na stole lezi 4 slozky s dokumenty. Na prvni pohled vypadaji stejne\n";
+        sleep_for(seconds(2));
     do {
         cout << "Jakou slozku vezmete do ruky? (1-4): ";
+        sleep_for(seconds(2));
         cin >> postava;
         cout << endl;
 
