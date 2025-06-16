@@ -154,6 +154,14 @@ Enemy vytvorPsychiatra(int cislo) {
     return Enemy("\nPsychiatr", "Psychiatr " + to_string(cislo), vedomi, sila, nakazlivost, neduverivost);
 }
 
+Enemy vytvorDEZORIENTACE() {
+    int vedomi = nahodne(30, 50);
+    int sila = nahodne(12, 14);
+    int nakazlivost = 0;
+    int neduverivost = 999;
+    return Enemy("\nDEZORIENTACE", "DEZORIENTACE", vedomi, sila, nakazlivost, neduverivost);
+}
+
 void checkpoint(Character& hrac) {
     if (hrac.vule < 8) {
         cout << "Nemate dostatek vule pro checkpoint (potreba 8).\n";
@@ -263,7 +271,20 @@ void boj(Character& hrac, vector<Enemy>& nepratele) {
     int pouzita_druha = 0;
     int pouzita_treti = 0;
 
+    bool jeDEZORIENTACE = (nepratele.size() == 1 && nepratele[0].jmeno == "DEZORIENTACE");
+    int DEZORIENTACE_kolo = 0;
+    int DEZORIENTACE_schopnost_pouziti = 0;
+    int DEZORIENTACE_max_hp = 0;
+
+    if (jeDEZORIENTACE) {
+        DEZORIENTACE_max_hp = nepratele[0].vedomi;
+        cout << "Tohle je DEZORIENTACE - mistr manipulace casem!\n\n";
+        sleep_for(seconds(3));
+    }
+
     while (hrac.zije()) {
+        if (jeDEZORIENTACE) DEZORIENTACE_kolo++;
+
         bool nekdo_zivy = false;
         for (int i = 0; i < nepratele.size(); i++) {
             if (nepratele[i].zije()) {
@@ -383,6 +404,18 @@ void boj(Character& hrac, vector<Enemy>& nepratele) {
                 hrac.rana(dmg);
                 if (!hrac.zije()) break;
             }
+        }
+        if (jeDEZORIENTACE && DEZORIENTACE_kolo % 5 == 0) {
+            DEZORIENTACE_schopnost_pouziti++;
+            int aktualni_hp = nepratele[0].vedomi;
+            int nove_hp = DEZORIENTACE_max_hp - aktualni_hp - (10 * DEZORIENTACE_schopnost_pouziti);
+            if (nove_hp < 1) nove_hp = 1;  // Minimální HP = 1
+
+            nepratele[0].vedomi = nove_hp;
+            cout << "\n*** DEZORIENTACE OVLADA CAS! ***\n";
+            cout << "Cas se zastavuje... realita se meni...\n";
+            cout << "ыеиеыке se meni na " << nove_hp << "! (pouziti " << DEZORIENTACE_schopnost_pouziti << "x)\n";
+            sleep_for(seconds(3));
         }
 
         sleep_for(seconds(2));
@@ -718,12 +751,27 @@ int main(){
         vector<Enemy> nepratele21;
         nepratele21.push_back(vytvorPsychiatra(3));
         boj(hrac, nepratele21);
+
+    }
+
+    if (hrac.zije()) {
+        cout << "\n" << string(50, '=') << "\n";
+        cout << "FINALNI SOUBOJ: DEZORIENTACE - ZTRACENI SE V CASU\n";
+        cout << string(50, '=') << "\n";
+        cout << "Vzduch se zhoustl... cas se zastavuje...\n";
+        cout << "Jste opravdu vporadku..?\n\n";
+        sleep_for(seconds(3));
+
+        vector<Enemy> boss;
+        boss.push_back(vytvorDEZORIENTACE());
+        boj(hrac, boss);
+
     }
 
     if (hrac.zije()) {
         cout << "\n" << string(50, '=') << "\n";
         cout << "GRATULUJEME! DOKONCILI JSTE VSECHNY BOJE A DOSTALI SE Z LECEBNY!\n";
-        cout << "16 psychu + 5 sanitaru/psychiatru = 21 boju celkem\n";
+        cout << "16 psychu + 5 sanitaru/psychiatru + 1 DEZORIENTACE = 22 boju celkem\n";
         cout << string(50, '=') << "\n";
         hrac.vypis();
     }
